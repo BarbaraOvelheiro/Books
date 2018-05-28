@@ -1,5 +1,7 @@
 package pt.ipg.books;
 
+import android.content.ContentValues;
+
 public class Category {
 
     private int _id;
@@ -19,5 +21,14 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ContentValues getContentValues(){
+        ContentValues values = new ContentValues();
+
+        values.put(DbTableCategories._ID, _id);
+        values.put(DbTableCategories.FIELD_NAME, name);
+
+        return  values;
     }
 }
