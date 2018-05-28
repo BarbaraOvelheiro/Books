@@ -1,5 +1,7 @@
 package pt.ipg.books;
 
+import android.content.ContentValues;
+
 public class Book {
 
     private int id;
@@ -38,4 +40,16 @@ public class Book {
     public void setIdCategory(int idCategory) {
         this.idCategory = idCategory;
     }
+
+    public ContentValues getContentValues(){
+        ContentValues values = new ContentValues();
+
+        values.put(DbTableBooks._ID, id);
+        values.put(DbTableBooks.FIELD_PRICE, title);
+        values.put(DbTableBooks.FIELD_PRICE, price);
+        values.put(DbTableBooks.FIELD_ID_CATEGORY, idCategory);
+
+        return values;
+    }
+
 }

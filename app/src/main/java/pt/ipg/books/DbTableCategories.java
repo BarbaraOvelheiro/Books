@@ -6,9 +6,9 @@ import android.provider.BaseColumns;
 
 public class DbTableCategories implements BaseColumns {
 
-    private static final String TABLE_NAME = "categories";
-    private  static final String FIELD_NAME = "name";
-    private SQLiteDatabase db;
+    public static final String TABLE_NAME = "categories";
+    public   static final String FIELD_NAME = "name";
+    public SQLiteDatabase db;
 
     public DbTableCategories(SQLiteDatabase db) {
         this.db = db;

@@ -1,16 +1,17 @@
 package pt.ipg.books;
 
+import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
 public class DbTableBooks implements BaseColumns{
 
-    private static final String TABLE_NAME = "books";
-    private static final String FIELD_TITLE = "title";
-    private static final String FIELD_PRICE = "price";
-    private static final String FIELD_ID_CATEGORY = "idCategory";
+    public static final String TABLE_NAME = "books";
+    public static final String FIELD_TITLE = "title";
+    public static final String FIELD_PRICE = "price";
+    public static final String FIELD_ID_CATEGORY = "idCategory";
 
-    private SQLiteDatabase db;
+    public SQLiteDatabase db;
 
     public DbTableBooks(SQLiteDatabase db) {
         this.db = db;
@@ -25,5 +26,9 @@ public class DbTableBooks implements BaseColumns{
                         FIELD_ID_CATEGORY + " INTEGER" +
                         ")"
         );
+    }
+
+    public long insert(ContentValues values){
+        return db.insert(TABLE_NAME, null, values);
     }
 }
