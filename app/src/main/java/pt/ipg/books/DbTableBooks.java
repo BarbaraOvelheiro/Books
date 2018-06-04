@@ -11,7 +11,7 @@ public class DbTableBooks implements BaseColumns{
     public static final String FIELD_PRICE = "price";
     public static final String FIELD_ID_CATEGORY = "idCategory";
 
-    public SQLiteDatabase db;
+    private SQLiteDatabase db;
 
     public DbTableBooks(SQLiteDatabase db) {
         this.db = db;
@@ -30,5 +30,9 @@ public class DbTableBooks implements BaseColumns{
 
     public long insert(ContentValues values){
         return db.insert(TABLE_NAME, null, values);
+    }
+
+    public int update(ContentValues values, String where, String[] whereArgs){
+        return db.update(TABLE_NAME, values, where, whereArgs);
     }
 }

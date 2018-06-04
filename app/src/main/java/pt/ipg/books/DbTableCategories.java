@@ -9,7 +9,8 @@ public class DbTableCategories implements BaseColumns {
 
     public static final String TABLE_NAME = "categories";
     public   static final String FIELD_NAME = "name";
-    public SQLiteDatabase db;
+
+    private SQLiteDatabase db;
 
     public DbTableCategories(SQLiteDatabase db) {
         this.db = db;
